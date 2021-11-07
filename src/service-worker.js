@@ -78,10 +78,35 @@ registerRoute(
   })
 );
 
-self.addEventListener("install", function (e) {
+registerRoute(
+  ({ url }) => url.origin.includes("qorebase.io"),
+  new NetworkFirst({
+    cacheName: "apidata",
+    plugins: [
+      new ExpirationPlugin({
+        maxAgeSeconds: 360,
+        maxEntries: 30,
+      }),
+    ],
+  })
+);
+
+registerRoute(
+  ({ url }) => /\.(jpe?g|png)$/i.test(url.pathname),
+  new StaleWhileRevalidate({
+    cacheName: "apiimage",
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 30,
+      }),
+    ],
+  })
+);
+
+self.addEventListener("install", (e) => {
   console.log("SW Install");
 
-  const asyncInstall = new Promise(function (resolve) {
+  const asyncInstall = new Promise((resolve) => {
     console.log("Waiting install to finish...");
     setTimeout(resolve, 5000);
   });
@@ -89,7 +114,7 @@ self.addEventListener("install", function (e) {
   e.waitUntil(asyncInstall);
 });
 
-self.addEventListener("activate", function (e) {
+self.addEventListener("activate", () => {
   console.log("SW Activate");
 });
 
