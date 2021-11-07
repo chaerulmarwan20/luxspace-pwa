@@ -114,9 +114,7 @@ self.addEventListener("install", (e) => {
   e.waitUntil(asyncInstall);
 });
 
-self.addEventListener("activate", () => {
-  console.log("SW Activate");
-});
+self.addEventListener("activate", () => console.log("SW Activate"));
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
