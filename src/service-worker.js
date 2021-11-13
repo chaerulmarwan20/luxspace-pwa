@@ -118,10 +118,19 @@ self.addEventListener("activate", () => console.log("SW Activate"));
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
+self.addEventListener("message", (e) => {
+  if (e.data && e.data.type === "SKIP_WAITING") {
     self.skipWaiting();
   }
+});
+
+self.addEventListener("push", (e) => {
+  e.waitUntil(
+    self.registration.showNotification("LuxSpace", {
+      icon: "./icon-120.png",
+      body: e.data.text(),
+    })
+  );
 });
 
 // Any other custom service worker logic can go here.

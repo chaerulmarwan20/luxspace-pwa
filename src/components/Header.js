@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -6,10 +7,12 @@ const Header = () => {
       <div className="container mx-auto py-5">
         <div className="flex flex-stretch items-center">
           <div className="w-56 items-center flex">
-            <img
-              src="images/content/logo.png"
-              alt="Luxspace | Fulfill your house with beautiful furniture"
-            />
+            <Link to="/">
+              <img
+                src="images/content/logo.png"
+                alt="Luxspace | Fulfill your house with beautiful furniture"
+              />
+            </Link>
           </div>
           <div className="w-full"></div>
           <div className="w-auto">
@@ -34,36 +37,36 @@ const Header = () => {
               id="menu"
             >
               <li className="mx-3 py-6 md:py-0">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="text-black md:text-white hover:underline"
                 >
                   Showcase
-                </a>
+                </Link>
               </li>
               <li className="mx-3 py-6 md:py-0">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="text-black md:text-white hover:underline"
                 >
                   Catalog
-                </a>
+                </Link>
               </li>
               <li className="mx-3 py-6 md:py-0">
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="text-black md:text-white hover:underline"
                 >
                   Delivery
-                </a>
+                </Link>
               </li>
               <li className="mx-3 py-6 md:py-0">
-                <a
-                  href="/"
+                <Link
+                  to="/profile"
                   className="text-black md:text-white hover:underline"
                 >
-                  Rewards
-                </a>
+                  Profile
+                </Link>
               </li>
             </ul>
           </div>
