@@ -14,8 +14,10 @@ import Footer from "./components/Footer";
 import Offline from "./components/Offline";
 import Splash from "./pages/Splash";
 import Profile from "./pages/Profile";
+import Details from "./pages/Details";
+import Cart from "./pages/Cart";
 
-function App() {
+function App({ cart }) {
   const [items, setItems] = useState([]);
   const [offlineStatus, setOfflineStatus] = useState(!navigator.onLine);
   const [isLoading, setIsLoading] = useState(true);
@@ -62,7 +64,7 @@ function App() {
       ) : (
         <>
           {offlineStatus && <Offline />}
-          <Header />
+          <Header mode="light" cart={cart} />
           <Hero />
           <Browse />
           <Arrived items={items} />
@@ -76,11 +78,41 @@ function App() {
 }
 
 export default function Routes() {
+  const cachedCart = window.localStorage.getItem("cart");
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (item) => {
+    const currentIndex = cart.length;
+    const newCart = [...cart, { id: currentIndex + 1, item }];
+    setCart(newCart);
+    window.localStorage.setItem("cart", JSON.stringify(newCart));
+  };
+
+  const handleRemoveCartItem = (id) => {
+    const revisedCart = cart.filter((item) => item.id !== id);
+    setCart(revisedCart);
+    window.localStorage.setItem("cart", JSON.stringify(revisedCart));
+  };
+
+  useEffect(() => {
+    if (cachedCart) setCart(JSON.parse(cachedCart));
+  }, [cachedCart]);
+
   return (
     <Router>
       <Switch>
-        <Route index element={<App />} />
-        <Route path="profile" element={<Profile />} />
+        <Route index element={<App cart={cart} />} />
+        <Route path="profile" element={<Profile cart={cart} />} />
+        <Route
+          path="details/:id"
+          element={<Details cart={cart} handleAddToCart={handleAddToCart} />}
+        />
+        <Route
+          path="cart"
+          element={
+            <Cart cart={cart} handleRemoveCartItem={handleRemoveCartItem} />
+          }
+        />
       </Switch>
     </Router>
   );

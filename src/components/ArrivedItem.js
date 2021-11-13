@@ -1,12 +1,6 @@
 import React from "react";
-
-const numberFormat = (price) => {
-  const currency = Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-  });
-  return currency.format(price);
-};
+import { Link } from "react-router-dom";
+import { numberFormat } from "../utils";
 
 const ArrivedItem = ({ item }) => {
   return (
@@ -57,15 +51,15 @@ const ArrivedItem = ({ item }) => {
         </div>
         <img
           src={item.image1}
-          alt=""
+          alt={item.name}
           className="w-full h-full object-cover object-center"
         />
       </div>
       <h5 className="text-lg font-semibold mt-4">{item.name}</h5>
       <span className="">{numberFormat(item.price)}</span>
-      <a href="/details" className="stretched-link">
+      <Link to={`/details/${item.id}`} state={item} className="stretched-link">
         {/* fake children */}
-      </a>
+      </Link>
     </div>
   );
 };

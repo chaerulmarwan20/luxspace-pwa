@@ -1,5 +1,4 @@
 import React from "react";
-import Logo from "../images/content/logo.png";
 
 const Splash = () => {
   return (
@@ -8,7 +7,7 @@ const Splash = () => {
         <div className="flex flex-col items-center justify-center h-screen">
           <div className="w-full md:w-4/12 text-center">
             <img
-              src={Logo}
+              src="/images/content/logo.png"
               alt="LuxSpace | Fullfill your house with beautiful furniture"
               className="mx-auto mb-8"
             />

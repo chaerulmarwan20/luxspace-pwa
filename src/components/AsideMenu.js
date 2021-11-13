@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AsideMenu = () => {
   return (
@@ -6,7 +7,7 @@ const AsideMenu = () => {
       <div className="border-t border-b border-gray-200 py-12 mt-16 px-4">
         <div className="flex justify-center mb-8">
           <img
-            src="images/content/logo.png"
+            src="/images/content/logo.png"
             alt="Luxspace | Fulfill your house with beautiful furniture"
           />
         </div>
@@ -16,19 +17,19 @@ const AsideMenu = () => {
               <h5 className="text-lg font-semibold mb-2 relative">Overview</h5>
               <ul className="h-0 invisible md:h-auto md:visible overflow-hidden">
                 <li>
-                  <a href="/" className="hover:underline py-1 block">
+                  <Link to="/" className="hover:underline py-1 block">
                     Shipping
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline py-1 block">
+                  <Link to="/" className="hover:underline py-1 block">
                     Refund
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline py-1 block">
+                  <Link to="/" className="hover:underline py-1 block">
                     Promotion
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -36,19 +37,19 @@ const AsideMenu = () => {
               <h5 className="text-lg font-semibold mb-2 relative">Company</h5>
               <ul className="h-0 invisible md:h-auto md:visible overflow-hidden">
                 <li>
-                  <a href="/" className="hover:underline py-1 block">
+                  <Link to="/" className="hover:underline py-1 block">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline py-1 block">
+                  <Link to="/" className="hover:underline py-1 block">
                     Career
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline py-1 block">
+                  <Link to="/" className="hover:underline py-1 block">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -56,19 +57,19 @@ const AsideMenu = () => {
               <h5 className="text-lg font-semibold mb-2 relative">Explore</h5>
               <ul className="h-0 invisible md:h-auto md:visible overflow-hidden">
                 <li>
-                  <a href="/" className="hover:underline py-1 block">
+                  <Link to="/" className="hover:underline py-1 block">
                     Terms & Conds
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline py-1 block">
+                  <Link to="/" className="hover:underline py-1 block">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline py-1 block">
+                  <Link to="/" className="hover:underline py-1 block">
                     For Developer
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -76,7 +77,7 @@ const AsideMenu = () => {
               <h5 className="text-lg font-semibold mb-2 relative">
                 Special Letter
               </h5>
-              <form action="#">
+              <form>
                 <label className="relative w-full">
                   <input
                     type="text"

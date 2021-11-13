@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Browse = () => {
   return (
@@ -17,7 +18,7 @@ const Browse = () => {
           >
             <div className="card-shadow rounded-xl">
               <img
-                src="images/content/image-catalog-1.png"
+                src="/images/content/image-catalog-1.png"
                 alt=""
                 className="
                   w-full
@@ -45,9 +46,9 @@ const Browse = () => {
               <h5 className="text-lg font-semibold">Living Room</h5>
               <span className="">18.309 items</span>
             </div>
-            <a href="/" className="stretched-link">
+            <Link to="/" className="stretched-link">
               {/* fake children */}
-            </a>
+            </Link>
           </div>
           <div
             className="
@@ -60,7 +61,7 @@ const Browse = () => {
           >
             <div className="card-shadow rounded-xl">
               <img
-                src="images/content/image-catalog-3.png"
+                src="/images/content/image-catalog-3.png"
                 alt=""
                 className="
                   w-full
@@ -93,9 +94,9 @@ const Browse = () => {
               <h5 className="text-lg font-semibold">Decoration</h5>
               <span className="">77.392 items</span>
             </div>
-            <a href="/" className="stretched-link">
+            <Link to="/" className="stretched-link">
               {/* fake children */}
-            </a>
+            </Link>
           </div>
           <div
             className="
@@ -108,7 +109,7 @@ const Browse = () => {
           >
             <div className="card-shadow rounded-xl">
               <img
-                src="images/content/image-catalog-4.png"
+                src="/images/content/image-catalog-4.png"
                 alt=""
                 className="
                   w-full
@@ -141,14 +142,14 @@ const Browse = () => {
               <h5 className="text-lg font-semibold">Living Room</h5>
               <span className="">22.094 items</span>
             </div>
-            <a href="/" className="stretched-link">
+            <Link to="/" className="stretched-link">
               {/* fake children */}
-            </a>
+            </Link>
           </div>
           <div className="relative col-span-9 row-span-1 md:col-span-4 card">
             <div className="card-shadow rounded-xl">
               <img
-                src="images/content/image-catalog-2.png"
+                src="/images/content/image-catalog-2.png"
                 alt=""
                 className="
                   w-full
@@ -176,9 +177,9 @@ const Browse = () => {
               <h5 className="text-lg font-semibold">Children Room</h5>
               <span className="">837 items</span>
             </div>
-            <a href="/" className="stretched-link">
+            <Link to="/" className="stretched-link">
               {/* fake children */}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
